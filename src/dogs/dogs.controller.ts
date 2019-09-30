@@ -16,10 +16,10 @@ async create(@Body() dogData: Dog): Promise<any> {
   return this.dogsService.create(dogData);
 }  
 
-    @Get(':id')
-  async  findOne(@Param('id') id: string) {
-        return this.dogsService.findById(id);
-    }
+@Get(':id')
+findOne(@Param('id') id) : Promise<Dog>{
+    return this.dogsService.findOne(id);
+}
 
     @Put(':id/update')
     async update(@Param('id') id, @Body() dogData: Dog): Promise<any> {

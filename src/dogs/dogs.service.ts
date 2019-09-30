@@ -13,8 +13,8 @@ export class DogsService {
     async  findAll(): Promise<Dog[]> {
         return await this.dogsRepository.find();
     }
-    async  findById(id): Promise<Dog[]> {
-        return await this.dogsRepository.find(id);
+    async findOne(id) : Promise<Dog> {
+        return await this.dogsRepository.findOne({ id:id });
     }
 
     async  create(dog: Dog): Promise<Dog> {
